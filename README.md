@@ -1,6 +1,6 @@
 # OOP_vs_POP-Swift
 Presentation comparing OOP and POP in Swift  
-**Design for example projects:**  
+<!--**Design for example projects:**  
 1. object Library  
    - private set variable name  
    - private set variable array of books  
@@ -43,4 +43,4 @@ Presentation comparing OOP and POP in Swift
    - ...  
    - private set variable number of sitting spaces  
    - initializer taking all Space properties + number of sitting spaces  
-   - description  
+   - description  -->
