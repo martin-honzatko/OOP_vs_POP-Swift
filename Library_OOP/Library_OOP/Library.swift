@@ -78,6 +78,10 @@ class InternetRoom: Space {
     func addComputer() {
         numberOfComputers += 1
     }
+	
+	func addComputer(_ numOfComps: Int) {
+		numberOfComputers += numOfComps
+	}
 }
 
 // Object ReadingRoom
