@@ -8,8 +8,22 @@ protocol BookProtocol: CustomStringConvertible, Equatable, Comparable {
     var genre: String { get }
 }
 
+extension BookProtocol where Self : Equatable {
+    func isEqualTo(other: any BookProtocol) -> Bool {
+        if let o = other as? Self { return self == o }
+        return false
+    }
+}
+
 protocol SpaceProtocol: CustomStringConvertible, Equatable, Comparable {
     var name: String { get }
+}
+
+extension SpaceProtocol where Self : Equatable {
+    func isEqualTo(other: any SpaceProtocol) -> Bool {
+        if let o = other as? Self { return self == o }
+        return false
+    }
 }
 
 // Book
@@ -156,7 +170,7 @@ struct Library: CustomStringConvertible {
 
 extension Library: Equatable, Comparable {
     static func ==(lhs: Library, rhs: Library) -> Bool {
-        return lhs.name == rhs.name && areEqualBooks(lhs.books, rhs.books) && areEqualSpaces(lhs.spaces, rhs.spaces)
+        return lhs.name == rhs.name && lhs.books.count == rhs.books.count && !zip(lhs.books, rhs.books).contains { !$0.isEqualTo(other: $1) } && lhs.spaces.count == rhs.spaces.count && !zip(lhs.spaces, rhs.spaces).contains { !$0.isEqualTo(other: $1) }
     }
 
     static func <(lhs: Library, rhs: Library) -> Bool {
