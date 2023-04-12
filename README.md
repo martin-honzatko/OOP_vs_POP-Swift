@@ -1,5 +1,6 @@
 # OOP_vs_POP-Swift
 Presentation comparing OOP and POP in Swift  
+[Link to presentation](https://docs.google.com/presentation/d/1b9mrABjZD1piTksF8Hfcc-r8PIRkujbvQhFv7g1RbIE/edit?usp=sharing)  
 <!--**Design for example projects:**  
 1. object Library  
    - private set variable name  
